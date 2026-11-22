@@ -1,0 +1,21 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none">
+  <rect width="800" height="420" rx="16" fill="#0d111a"/>
+  <circle cx="220" cy="210" r="180" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="580" cy="180" r="160" fill="#f472b6" fill-opacity="0.07"/>
+  <g stroke="#f1efe9" stroke-opacity="0.1" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="350"/><line x1="80" y1="350" x2="730" y2="350"/>
+    <line x1="80" y1="130" x2="730" y2="130" stroke-dasharray="4 4"/>
+    <line x1="80" y1="205" x2="730" y2="205" stroke-dasharray="4 4"/>
+    <line x1="80" y1="280" x2="730" y2="280" stroke-dasharray="4 4"/>
+  </g>
+  <line x1="110" y1="325" x2="700" y2="95" stroke="#38bdf8" stroke-width="3"/>
+  <line x1="110" y1="305" x2="700" y2="75" stroke="#38bdf8" stroke-opacity="0.25" stroke-dasharray="6 6"/>
+  <line x1="110" y1="345" x2="700" y2="115" stroke="#38bdf8" stroke-opacity="0.25" stroke-dasharray="6 6"/>
+  <g fill="#f472b6" stroke="#f1efe9" stroke-width="1.5">
+    <circle cx="140" cy="310" r="6"/><circle cx="195" cy="295" r="6"/><circle cx="240" cy="260" r="6"/>
+    <circle cx="310" cy="252" r="6"/><circle cx="370" cy="215" r="6"/><circle cx="430" cy="208" r="6"/>
+    <circle cx="490" cy="170" r="6"/><circle cx="555" cy="158" r="6"/><circle cx="620" cy="122" r="6"/>
+    <circle cx="675" cy="105" r="6"/>
+  </g>
+  <text x="100" y="45" fill="#f1efe9" font-family="monospace" font-size="15">LÁMINA I · REGRESIÓN LINEAL SIMPLE (R² = 0.942 · MSE = 12.48)</text>
+</svg>
