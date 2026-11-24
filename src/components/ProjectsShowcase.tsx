@@ -1,12 +1,11 @@
 ﻿"use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
-  FolderGit2,
   Eye,
   X,
   Code2,
-  CheckCircle2,
   ExternalLink,
   Copy,
   Check,
@@ -14,17 +13,13 @@ import {
   Server,
 } from "lucide-react";
 import { projectsData } from "@/data/portfolioData";
-import { ProjectItem } from "@/types/portfolio";
+import { ProjectItem, Language } from "@/types/portfolio";
 
-const accentStyles: Record<ProjectItem["accentColor"], string> = {
-  cyan: "border-sky-300/30 text-sky-200 bg-sky-400/10",
-  emerald: "border-emerald-300/30 text-emerald-200 bg-emerald-400/10",
-  rose: "border-rose-300/30 text-rose-200 bg-rose-400/10",
-  amber: "border-amber-300/30 text-amber-200 bg-amber-400/10",
-  indigo: "border-indigo-300/30 text-indigo-200 bg-indigo-400/10",
-};
+interface ProjectsShowcaseProps {
+  lang: Language;
+}
 
-export default function ProjectsShowcase() {
+export default function ProjectsShowcase({ lang }: ProjectsShowcaseProps) {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [copied, setCopied] = useState(false);
 
@@ -35,111 +30,159 @@ export default function ProjectsShowcase() {
   };
 
   return (
-    <section id="proyectos" className="border-b border-stone-200/10 py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-          <div>
-            <span className="font-mono text-xs tracking-widest text-rose-300 uppercase">
-              03 · Evidencias de las 10 Semanas
-            </span>
-            <h2 className="mt-2 font-[family-name:var(--font-serif)] text-3xl font-bold text-stone-100 sm:text-4xl">
-              Proyectos y Actividades Documentadas
-            </h2>
+    <section id="proyectos" className="scroll-mt-20 border-b border-[#17191D] bg-[#000000] py-12">
+      <div className="mx-auto w-full max-w-[1680px] px-4 sm:px-8 lg:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          className="chip-panel p-7 sm:p-10"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#17191D] pb-6">
+            <div>
+              <span className="font-mono text-xs tracking-widest text-[#777D86] uppercase">
+                {lang === "es"
+                  ? "04 // EVIDENCIAS DE LAS 10 SEMANAS"
+                  : "04 // 10-WEEK TECHNICAL EVIDENCE"}
+              </span>
+              <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight text-[#C8CDD5] uppercase sm:text-4xl">
+                {lang === "es" ? "UNIDADES DE PROCESAMIENTO" : "PROCESSING UNITS"}
+              </h2>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="h-1.5 w-16 bg-[#0000DD]" />
+              <span className="h-1.5 w-8 bg-[#17191D]" />
+            </div>
           </div>
-          <p className="max-w-md text-sm text-stone-400">
-            Selecciona cualquier lámina de proyecto para inspeccionar su código fuente,
-            metodología, gráficas de resultados y arquitectura técnica.
-          </p>
-        </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projectsData.map((project) => (
-            <article
-              key={project.id}
-              className="litho-card litho-card-hover flex flex-col justify-between rounded-2xl p-6"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2">
-                  <span
-                    className={`rounded-full border px-3 py-0.5 text-xs font-medium ${
-                      accentStyles[project.accentColor]
-                    }`}
-                  >
-                    {project.category}
-                  </span>
-                  <span className="font-mono text-xs text-stone-400">
-                    {project.evidence.week}
-                  </span>
-                </div>
-
-                <div className="mt-4 overflow-hidden rounded-xl border border-stone-200/10 bg-stone-950">
-                  <img
-                    src={project.evidence.images[0]?.src}
-                    alt={project.title}
-                    className="h-40 w-full object-cover transition duration-500 hover:scale-105"
-                  />
-                </div>
-
-                <h3 className="mt-4 font-[family-name:var(--font-serif)] text-xl font-bold text-stone-100">
-                  {project.title}
-                </h3>
-
-                <p className="mt-2 text-sm leading-relaxed text-stone-300">
-                  {project.shortDescription}
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {project.evidence.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md border border-stone-200/10 bg-stone-900/80 px-2 py-0.5 font-mono text-[11px] text-stone-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-6 flex items-center justify-between border-t border-stone-200/10 pt-4">
-                <button
-                  type="button"
-                  onClick={() => setSelectedProject(project)}
-                  className="inline-flex items-center gap-2 rounded-lg border border-sky-300/35 bg-sky-400/15 px-3.5 py-2 text-xs font-semibold text-sky-100 transition hover:bg-sky-400/25"
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {projectsData.filter((p) => p.id !== "proj-fullstack").map((project, index) => {
+              const details = project[lang];
+              return (
+                <motion.article
+                  key={project.id}
+                  initial={{ opacity: 0, y: 26 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  className="chip-hover flex flex-col justify-between border border-[#17191D] bg-[#08090B] p-6"
                 >
-                  <Eye className="h-3.5 w-3.5" />
-                  Ver Evidencia y Código
-                </button>
+                  <div>
+                    <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-[#777D86]">
+                      <span>
+                        {lang === "es" ? "UNIDAD" : "UNIT"} 0{index + 1} ·{" "}
+                        {details.week.toUpperCase()}
+                      </span>
+                      <span>{project.category[lang].toUpperCase()}</span>
+                    </div>
 
-                <a
-                  href={project.evidence.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Abrir repositorio en GitHub"
-                  className="inline-flex items-center gap-1 text-xs text-stone-400 transition hover:text-stone-100"
-                >
-                  <FolderGit2 className="h-4 w-4" />
-                  Repo
-                </a>
+                    <div className="mt-3 overflow-hidden border border-[#17191D] bg-[#000000]">
+                      <img
+                        src={project.imageSources[0]}
+                        alt={project.title[lang]}
+                        className="h-36 w-full object-cover"
+                      />
+                    </div>
+
+                    <h3 className="mt-4 font-[family-name:var(--font-display)] text-lg font-bold text-[#D2D6DD] uppercase">
+                      {project.title[lang]}
+                    </h3>
+
+                    <p className="mt-2 text-xs leading-relaxed text-[#777D86] sm:text-sm">
+                      {project.shortDescription[lang]}
+                    </p>
+                  </div>
+
+                  <div className="mt-5 border-t border-[#17191D] pt-4">
+                    <div className="mb-4 flex flex-wrap gap-1.5">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="bg-[#17191D] px-2 py-0.5 font-mono text-[10px] text-[#777D86]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap items-center justify-between gap-2.5">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedProject(project)}
+                        className="inline-flex items-center gap-1.5 bg-[#0000DD] px-3.5 py-2 font-mono text-[11px] font-medium text-white uppercase transition hover:bg-[#0000ff]"
+                      >
+                        <Eye className="h-3.5 w-3.5" />
+                        {lang === "es" ? "Ver Evidencia y Código" : "View Evidence & Code"}
+                      </button>
+
+                      <a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 border border-[#17191D] bg-[#17191D] px-3.5 py-2 font-mono text-[11px] font-medium text-[#C8CDD5] uppercase transition hover:border-[#0000DD] hover:text-white"
+                      >
+                        {lang === "es" ? "Ver en GitHub" : "View on GitHub"}
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55 }}
+            className="mt-8 border border-[#17191D] bg-[#08090B] p-6"
+          >
+            <p className="font-mono text-xs tracking-widest text-[#777D86] uppercase">
+              {lang === "es" ? "RESUMEN TÉCNICO POR UNIDAD" : "TECHNICAL SUMMARY PER UNIT"}
+            </p>
+            <div className="mt-4 grid gap-4 font-mono text-xs sm:grid-cols-2 lg:grid-cols-4">
+              <div className="flex flex-col justify-between gap-1 border border-[#17191D] bg-[#000000] p-3.5">
+                <span className="text-[10px] text-[#777D86]">
+                  {lang === "es" ? "01 // REGRESIÓN LINEAL" : "01 // LINEAR REGRESSION"}
+                </span>
+                <span className="text-sm font-semibold text-[#C8CDD5]">R² = 0.888</span>
               </div>
-            </article>
-          ))}
-        </div>
+              <div className="flex flex-col justify-between gap-1 border border-[#17191D] bg-[#000000] p-3.5">
+                <span className="text-[10px] text-[#777D86]">
+                  {lang === "es" ? "02 // LABERINTO DFS/BFS" : "02 // DFS/BFS MAZE"}
+                </span>
+                <span className="text-sm font-semibold text-[#C8CDD5]">27x39 · 60 FPS</span>
+              </div>
+              <div className="flex flex-col justify-between gap-1 border border-[#17191D] bg-[#000000] p-3.5">
+                <span className="text-[10px] text-[#777D86]">03 // K-MEANS + KNN</span>
+                <span className="text-sm font-semibold text-[#C8CDD5]">N = 500 · K=3/4</span>
+              </div>
+              <div className="flex flex-col justify-between gap-1 border border-[#17191D] bg-[#000000] p-3.5">
+                <span className="text-[10px] text-[#777D86]">04 // HOTSPOTS GEO-ML</span>
+                <span className="text-sm font-semibold text-[#0000DD]">HAVERSINE + LOO</span>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {selectedProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           role="dialog"
           aria-modal="true"
         >
-          <div className="litho-card relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-2xl p-6 sm:p-8">
-            <div className="flex items-start justify-between gap-4 border-b border-stone-200/15 pb-4">
+          <div className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto border border-[#262930] bg-[#08090B] p-6 sm:p-8">
+            <div className="flex items-start justify-between gap-4 border-b border-[#17191D] pb-4">
               <div>
-                <span className="font-mono text-xs text-sky-300 uppercase">
-                  {selectedProject.evidence.week} · {selectedProject.category}
+                <span className="font-mono text-xs text-[#777D86] uppercase">
+                  {selectedProject[lang].week} // {selectedProject.category[lang]}
                 </span>
-                <h3 className="mt-1 font-[family-name:var(--font-serif)] text-2xl font-bold text-stone-100 sm:text-3xl">
-                  {selectedProject.title}
+                <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl font-bold text-[#C8CDD5] uppercase sm:text-3xl">
+                  {selectedProject.title[lang]}
                 </h3>
               </div>
 
@@ -147,135 +190,136 @@ export default function ProjectsShowcase() {
                 type="button"
                 onClick={() => setSelectedProject(null)}
                 aria-label="Cerrar detalle de proyecto"
-                className="rounded-lg border border-stone-200/15 p-2 text-stone-300 hover:bg-stone-800 hover:text-white"
+                className="border border-[#17191D] bg-[#17191D] p-2 text-[#C8CDD5] hover:border-[#0000DD]"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
             <div className="mt-6 space-y-6">
-              {selectedProject.evidence.images.map((img) => (
-                <figure
-                  key={img.src}
-                  className="overflow-hidden rounded-xl border border-stone-200/15 bg-stone-950"
-                >
+              {selectedProject.imageSources.map((src, i) => (
+                <figure key={src} className="border border-[#17191D] bg-[#000000]">
                   <img
-                    src={img.src}
-                    alt={img.caption}
+                    src={src}
+                    alt={selectedProject[lang].imageCaptions[i] ?? selectedProject.title[lang]}
                     className="max-h-72 w-full object-contain"
                   />
-                  <figcaption className="border-t border-stone-200/10 px-4 py-2.5 font-mono text-xs text-stone-400">
-                    {img.caption}
+                  <figcaption className="border-t border-[#17191D] px-4 py-2.5 font-mono text-xs text-[#777D86]">
+                    {selectedProject[lang].imageCaptions[i]}
                   </figcaption>
                 </figure>
               ))}
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border border-stone-200/10 bg-stone-950/60 p-4">
-                  <h4 className="text-xs font-semibold tracking-wider text-amber-300 uppercase">
-                    Problema que resuelve
+                <div className="border border-[#17191D] bg-[#000000] p-4">
+                  <h4 className="font-mono text-xs font-semibold tracking-wider text-[#777D86] uppercase">
+                    {lang === "es" ? "Problema que resuelve" : "Problem Solved"}
                   </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-stone-300">
-                    {selectedProject.evidence.problem}
+                  <p className="mt-2 text-sm leading-relaxed text-[#C8CDD5]">
+                    {selectedProject[lang].problem}
                   </p>
                 </div>
 
-                <div className="rounded-xl border border-stone-200/10 bg-stone-950/60 p-4">
-                  <h4 className="text-xs font-semibold tracking-wider text-sky-300 uppercase">
-                    Objetivo de la actividad
+                <div className="border border-[#17191D] bg-[#000000] p-4">
+                  <h4 className="font-mono text-xs font-semibold tracking-wider text-[#777D86] uppercase">
+                    {lang === "es" ? "Objetivo de la actividad" : "Activity Objective"}
                   </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-stone-300">
-                    {selectedProject.evidence.objective}
+                  <p className="mt-2 text-sm leading-relaxed text-[#C8CDD5]">
+                    {selectedProject[lang].objective}
                   </p>
                 </div>
               </div>
 
-              <div className="rounded-xl border border-stone-200/10 bg-stone-950/60 p-4">
-                <h4 className="text-xs font-semibold tracking-wider text-rose-300 uppercase">
-                  Explicación de la solución implementada
+              <div className="border border-[#17191D] bg-[#000000] p-4">
+                <h4 className="font-mono text-xs font-semibold tracking-wider text-[#777D86] uppercase">
+                  {lang === "es"
+                    ? "Explicación de la solución implementada"
+                    : "Implemented Solution Explanation"}
                 </h4>
-                <p className="mt-2 text-sm leading-relaxed text-stone-300">
-                  {selectedProject.evidence.solutionExplanation}
+                <p className="mt-2 text-sm leading-relaxed text-[#C8CDD5]">
+                  {selectedProject[lang].solutionExplanation}
                 </p>
               </div>
 
-              <div className="rounded-xl border border-stone-200/10 bg-stone-950/60 p-4">
-                <h4 className="text-xs font-semibold tracking-wider text-emerald-300 uppercase">
-                  Resultados obtenidos
+              <div className="border border-[#17191D] bg-[#000000] p-4">
+                <h4 className="font-mono text-xs font-semibold tracking-wider text-[#777D86] uppercase">
+                  {lang === "es" ? "Resultados obtenidos" : "Achieved Results"}
                 </h4>
                 <ul className="mt-3 space-y-2">
-                  {selectedProject.evidence.results.map((res) => (
+                  {selectedProject[lang].results.map((res) => (
                     <li
                       key={res}
-                      className="flex items-start gap-2.5 text-sm text-stone-200"
+                      className="flex items-start gap-2.5 text-sm text-[#C8CDD5]"
                     >
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
+                      <span className="mt-1.5 h-2 w-2 shrink-0 bg-[#0000DD]" />
                       <span>{res}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {selectedProject.evidence.architectureDetails && (
-                <div className="space-y-4 rounded-xl border border-indigo-300/25 bg-indigo-950/20 p-5">
-                  <div className="flex items-center gap-2 text-indigo-200">
-                    <Layers className="h-4 w-4" />
-                    <h4 className="text-sm font-semibold">
-                      Documentación de Arquitectura Frontend y Backend
+              {selectedProject[lang].architectureDetails && (
+                <div className="space-y-4 border border-[#0000DD] bg-[#000000] p-5">
+                  <div className="flex items-center gap-2 font-mono text-xs text-[#C8CDD5] uppercase">
+                    <Layers className="h-4 w-4 text-[#0000DD]" />
+                    <h4>
+                      {lang === "es"
+                        ? "Documentación de Arquitectura Frontend y Backend"
+                        : "Frontend & Backend Architecture Documentation"}
                     </h4>
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
-                      <p className="font-mono text-xs text-sky-300">
-                        Estructura del Proyecto Next.js
+                      <p className="font-mono text-xs text-[#777D86] uppercase">
+                        {lang === "es" ? "Estructura del Proyecto" : "Project Structure"}
                       </p>
-                      <ul className="mt-2 space-y-1 text-xs text-stone-300">
-                        {selectedProject.evidence.architectureDetails.projectStructure.map(
+                      <ul className="mt-2 space-y-1 text-xs text-[#C8CDD5]">
+                        {selectedProject[lang].architectureDetails!.projectStructure.map(
                           (item) => (
-                            <li key={item}>• {item}</li>
+                            <li key={item}>— {item}</li>
                           )
                         )}
                       </ul>
                     </div>
 
                     <div>
-                      <p className="font-mono text-xs text-rose-300">
-                        Componentes React Desarrollados
+                      <p className="font-mono text-xs text-[#777D86] uppercase">
+                        {lang === "es" ? "Componentes React" : "React Components"}
                       </p>
-                      <ul className="mt-2 space-y-1 text-xs text-stone-300">
-                        {selectedProject.evidence.architectureDetails.frontendComponents.map(
+                      <ul className="mt-2 space-y-1 text-xs text-[#C8CDD5]">
+                        {selectedProject[lang].architectureDetails!.frontendComponents.map(
                           (item) => (
-                            <li key={item}>• {item}</li>
+                            <li key={item}>— {item}</li>
                           )
                         )}
                       </ul>
                     </div>
                   </div>
 
-                  <div className="grid gap-4 border-t border-stone-200/10 pt-3 sm:grid-cols-2">
+                  <div className="grid gap-4 border-t border-[#17191D] pt-3 sm:grid-cols-2">
                     <div>
-                      <p className="flex items-center gap-1.5 font-mono text-xs text-emerald-300">
-                        <Server className="h-3.5 w-3.5" />
-                        Endpoints API REST
+                      <p className="flex items-center gap-1.5 font-mono text-xs text-[#777D86] uppercase">
+                        <Server className="h-3.5 w-3.5 text-[#0000DD]" />
+                        {lang === "es" ? "Endpoints API REST" : "REST API Endpoints"}
                       </p>
-                      <ul className="mt-2 space-y-1 text-xs text-stone-300">
-                        {selectedProject.evidence.architectureDetails.backendEndpoints.map(
+                      <ul className="mt-2 space-y-1 text-xs text-[#C8CDD5]">
+                        {selectedProject[lang].architectureDetails!.backendEndpoints.map(
                           (item) => (
-                            <li key={item}>• {item}</li>
+                            <li key={item}>— {item}</li>
                           )
                         )}
                       </ul>
                     </div>
 
                     <div>
-                      <p className="font-mono text-xs text-amber-300">
-                        Validaciones y Seguridad
+                      <p className="font-mono text-xs text-[#777D86] uppercase">
+                        {lang === "es" ? "Validaciones y Seguridad" : "Validations & Security"}
                       </p>
-                      <ul className="mt-2 space-y-1 text-xs text-stone-300">
-                        {selectedProject.evidence.architectureDetails.validations.map(
+                      <ul className="mt-2 space-y-1 text-xs text-[#C8CDD5]">
+                        {selectedProject[lang].architectureDetails!.validations.map(
                           (item) => (
-                            <li key={item}>• {item}</li>
+                            <li key={item}>— {item}</li>
                           )
                         )}
                       </ul>
@@ -284,41 +328,41 @@ export default function ProjectsShowcase() {
                 </div>
               )}
 
-              <div className="overflow-hidden rounded-xl border border-stone-200/15 bg-[#080a0f]">
-                <div className="flex items-center justify-between border-b border-stone-200/10 bg-stone-900/70 px-4 py-2.5">
-                  <div className="flex items-center gap-2 font-mono text-xs text-stone-300">
-                    <Code2 className="h-4 w-4 text-sky-300" />
-                    <span>{selectedProject.evidence.fileName}</span>
+              <div className="border border-[#17191D] bg-[#000000]">
+                <div className="flex items-center justify-between border-b border-[#17191D] bg-[#17191D] px-4 py-2.5">
+                  <div className="flex items-center gap-2 font-mono text-xs text-[#C8CDD5]">
+                    <Code2 className="h-4 w-4 text-[#0000DD]" />
+                    <span>{selectedProject.fileName}</span>
                   </div>
                   <button
                     type="button"
-                    onClick={() => handleCopyCode(selectedProject.evidence.codeSnippet)}
-                    className="inline-flex items-center gap-1.5 rounded-md border border-stone-200/15 px-2.5 py-1 text-xs text-stone-300 hover:bg-stone-800"
+                    onClick={() => handleCopyCode(selectedProject.codeSnippet)}
+                    className="inline-flex items-center gap-1.5 border border-[#777D86]/40 bg-[#08090B] px-2.5 py-1 font-mono text-xs text-[#C8CDD5] hover:border-[#0000DD]"
                   >
                     {copied ? (
                       <>
-                        <Check className="h-3.5 w-3.5 text-emerald-300" />
-                        Copiado
+                        <Check className="h-3.5 w-3.5 text-[#0000DD]" />
+                        {lang === "es" ? "COPIADO" : "COPIED"}
                       </>
                     ) : (
                       <>
                         <Copy className="h-3.5 w-3.5" />
-                        Copiar código
+                        {lang === "es" ? "COPIAR" : "COPY"}
                       </>
                     )}
                   </button>
                 </div>
-                <pre className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-stone-200">
-                  <code>{selectedProject.evidence.codeSnippet}</code>
+                <pre className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-[#C8CDD5]">
+                  <code>{selectedProject.codeSnippet}</code>
                 </pre>
               </div>
 
-              <div className="flex flex-wrap items-center justify-between gap-4 border-t border-stone-200/10 pt-4">
+              <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#17191D] pt-4">
                 <div className="flex flex-wrap gap-1.5">
-                  {selectedProject.evidence.technologies.map((tech) => (
+                  {selectedProject.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md border border-stone-200/15 px-2.5 py-1 font-mono text-xs text-stone-300"
+                      className="bg-[#17191D] px-2.5 py-1 font-mono text-xs text-[#777D86]"
                     >
                       {tech}
                     </span>
@@ -326,12 +370,12 @@ export default function ProjectsShowcase() {
                 </div>
 
                 <a
-                  href={selectedProject.evidence.repoUrl}
+                  href={selectedProject.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-sky-300/35 bg-sky-400/15 px-4 py-2 text-xs font-semibold text-sky-100 hover:bg-sky-400/25"
+                  className="inline-flex items-center gap-2 bg-[#0000DD] px-4 py-2 font-mono text-xs font-medium text-white uppercase hover:bg-[#0000ff]"
                 >
-                  Abrir Archivos en GitHub
+                  {lang === "es" ? "Ver en GitHub" : "View on GitHub"}
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               </div>

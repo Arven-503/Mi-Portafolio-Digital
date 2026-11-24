@@ -7,78 +7,145 @@
 } from "@/types/portfolio";
 
 export const profileData: ProfileData = {
-  fullName: "Daniel Alejandro Mendoza",
-  role: "Desarrollador de Software & Especialista en IA / Machine Learning",
-  tagline:
-    "Transformando datos y algoritmos en soluciones web inteligentes con rigor técnico y sensibilidad estética.",
-  avatarUrl: "",
-  location: "San Salvador, El Salvador",
+  fullName: "Daniel Alejandro Amaya",
   socials: {
-    github: "https://github.com/usuario-simulado",
-    linkedin: "https://linkedin.com/in/usuario-simulado",
-    email: "contacto.simulado@ejemplo.com",
+    github: "https://github.com/Arven-503",
+    linkedin: "https://www.linkedin.com/in/daniel-alejandro-amaya-vel%C3%A1squez-880244401/",
+    email: "daniel.amaya.dev.2007@gmail.com",
   },
-  about: {
-    whoAmI:
-      "Soy estudiante y desarrollador enfocado en la intersección entre la inteligencia artificial aplicada y la ingeniería web moderna. Me apasiona construir sistemas donde cada modelo matemático tiene una interfaz clara, rápida y comprensible.",
-    studies:
-      "Programa Intensivo de Inteligencia Artificial, Machine Learning y Desarrollo de Aplicaciones Web (10 Semanas) e Ingeniería en Sistemas.",
-    interests: [
-      "Aprendizaje Supervisado y No Supervisado",
-      "Optimización de Algoritmos de Búsqueda",
-      "Arquitectura Full-Stack con Next.js y TypeScript",
-      "Visualización de Datos Geoespaciales",
-    ],
-    goals:
-      "Consolidar mi perfil como ingeniero de software capaz de llevar modelos de ciencia de datos desde notebooks experimentales hasta aplicaciones web en producción escalables.",
-    strengths: [
-      "Pensamiento analítico y resolución estructurada de problemas",
-      "Código limpio, modular y tipado estricto",
-      "Capacidad de comunicar hallazgos técnicos de forma visual",
-      "Aprendizaje autónomo e integración ágil de nuevas herramientas",
-    ],
+  es: {
+    role: "Estudiante con formación en Informática",
+    tagline: "Imaginando y creando nuevas soluciones",
+    location: "San Salvador, El Salvador",
+    about: {
+      whoAmI:
+        "Soy estudiante del programa ¡Supérate! con formación en Informática y fui la nota más alta de la prueba AVANZO en San Salvador en 2025. Me enfoco en el desarrollo de software, la inteligencia artificial aplicada y la creación de soluciones tecnológicas con impacto real.",
+      studies:
+        "Programa ¡Supérate! · Especialización en Informática, Inteligencia Artificial y Desarrollo Full-Stack.",
+      interests: [
+        "Inteligencia Artificial y Machine Learning",
+        "Algoritmos de Búsqueda y Optimización",
+        "Arquitectura Web Full-Stack (Next.js / TypeScript)",
+        "Ciencia de Datos y Analítica Espacial",
+      ],
+      goals:
+        "Transformar ideas complejas en plataformas funcionales, escalables y bien diseñadas, manteniendo la excelencia académica y técnica en cada proyecto.",
+      strengths: [
+        "Pensamiento lógico y resolución estructurada de problemas",
+        "Excelencia académica y liderazgo en proyectos tecnológicos",
+        "Desarrollo modular con tipado estricto",
+        "Capacidad para aprender e integrar nuevas tecnologías",
+      ],
+    },
+  },
+  en: {
+    role: "Student with a background in Computer Science",
+    tagline: "Imagining and creating new solutions",
+    location: "San Salvador, El Salvador",
+    about: {
+      whoAmI:
+        "I am a student in the ¡Supérate! program with a background in Computer Science, and I achieved the highest score on the AVANZO national exam in San Salvador in 2025. I focus on software development, applied artificial intelligence, and building impactful tech solutions.",
+      studies:
+        "¡Supérate! Program · Specialization in Computer Science, Artificial Intelligence & Full-Stack Development.",
+      interests: [
+        "Artificial Intelligence & Machine Learning",
+        "Search & Optimization Algorithms",
+        "Full-Stack Web Architecture (Next.js / TypeScript)",
+        "Data Science & Spatial Analytics",
+      ],
+      goals:
+        "Transform complex ideas into functional, scalable, and well-engineered platforms while maintaining academic and technical excellence.",
+      strengths: [
+        "Logical thinking and structured problem-solving",
+        "Academic excellence and leadership in tech projects",
+        "Modular development with strict typing",
+        "Fast learner and adaptable to new tools",
+      ],
+    },
   },
 };
 
 export const experiencesData: ExperienceItem[] = [
   {
     id: "exp-1",
-    role: "Desarrollador de Modelos Predictivos y Analítica",
-    organization: "Programa IA & Desarrollo Web – Cohorte 2026",
-    period: "Septiembre 2026 – Noviembre 2026",
-    type: "Académica",
-    description:
-      "Implementación de flujos completos de ciencia de datos, algoritmos de búsqueda, clustering y despliegue de aplicaciones web Full-Stack.",
-    achievements: [
-      "Entrenamiento y evaluación de modelos de Regresión Lineal, K-Means y KNN sobre conjuntos de datos reales.",
-      "Diseño e implementación de una API REST validada en Next.js conectada a interfaz reactiva.",
-    ],
+    es: {
+      role: "ExpoTech 2026",
+      organization: "Programa ¡Supérate! · Innovación y Desarrollo Tecnológico",
+      period: "2026",
+      type: "Exhibición Tecnológica",
+      description:
+        "Presentación de soluciones tecnológicas integrales combinando desarrollo web Full-Stack e inteligencia artificial aplicada.",
+      achievements: [
+        "Demostración en vivo de arquitectura web moderna, API REST y modelos predictivos.",
+        "Resolución de problemáticas reales mediante prototipos funcionales de software.",
+      ],
+    },
+    en: {
+      role: "ExpoTech 2026",
+      organization: "¡Supérate! Program · Innovation & Tech Development",
+      period: "2026",
+      type: "Tech Exhibition",
+      description:
+        "Showcase of end-to-end technology solutions combining Full-Stack web development and applied artificial intelligence.",
+      achievements: [
+        "Live demonstration of modern web architecture, REST APIs, and predictive models.",
+        "Solved real-world challenges through functional software prototypes.",
+      ],
+    },
   },
   {
     id: "exp-2",
-    role: "Colaborador en Reto AI Challenge (Clustering y Clasificación)",
-    organization: "Laboratorio Práctico de Machine Learning",
-    period: "Octubre 2026",
-    type: "Proyecto Colaborativo",
-    description:
-      "Segmentación de perfiles y clasificación supervisada mediante métricas de distancia euclidiana y selección óptima de hiperparámetros K.",
-    achievements: [
-      "Reducción de inercia intra-clúster mediante método del codo y validación cruzada.",
-      "Documentación reproducida en repositorio Git con visualizaciones comparativas.",
-    ],
+    es: {
+      role: "Expo de Logros 2025",
+      organization: "Programa ¡Supérate! · Muestra Académica y Tecnológica",
+      period: "2025",
+      type: "Evento Institucional",
+      description:
+        "Exposición de proyectos desarrollados en informática, análisis de datos y programación ante evaluadores e invitados.",
+      achievements: [
+        "Presentación estructurada de resultados técnicos, métricas y funcionamiento del sistema.",
+        "Trabajo colaborativo y comunicación efectiva de propuestas de software.",
+      ],
+    },
+    en: {
+      role: "Expo de Logros 2025 (Achievements Expo)",
+      organization: "¡Supérate! Program · Academic & Tech Showcase",
+      period: "2025",
+      type: "Institutional Event",
+      description:
+        "Exhibition of software, data analysis, and computer science projects presented to evaluators and guests.",
+      achievements: [
+        "Structured presentation of technical outcomes, metrics, and system architecture.",
+        "Collaborative teamwork and clear communication of software proposals.",
+      ],
+    },
   },
   {
     id: "exp-3",
-    role: "Analista de Inteligencia Geoespacial (Hotspots Comerciales)",
-    organization: "Proyecto Integrador de Ciencia de Datos",
-    period: "Noviembre 2026",
-    type: "Proyecto Colaborativo",
-    description:
-      "Identificación de zonas de alta densidad comercial para optimizar decisiones estratégicas de ubicación.",
-    achievements: [
-      "Limpieza de coordenadas, normalización espacial y detección de núcleos de concentración.",
-      "Generación de mapas de densidad interpretables para toma de decisiones.",
-    ],
+    es: {
+      role: "Hackathon 2024",
+      organization: "Competencia de Desarrollo y Resolución de Retos",
+      period: "2024",
+      type: "Hackathon",
+      description:
+        "Ideación, diseño y prototipado rápido de una solución digital bajo tiempo limitado en equipo.",
+      achievements: [
+        "Diseño de lógica funcional y experiencia de usuario en sesiones intensivas de código.",
+        "Validación de propuesta técnica orientada a impacto social y eficiencia.",
+      ],
+    },
+    en: {
+      role: "Hackathon 2024",
+      organization: "Software Development & Problem-Solving Competition",
+      period: "2024",
+      type: "Hackathon",
+      description:
+        "Rapid ideation, design, and prototyping of a digital solution under strict time constraints.",
+      achievements: [
+        "Engineered core application logic and user interface during intensive coding sprints.",
+        "Validated technical proposal focused on social impact and efficiency.",
+      ],
+    },
   },
 ];
 
@@ -86,29 +153,21 @@ export const projectsData: ProjectItem[] = [
   {
     id: "proj-regresion",
     slug: "regresion-lineal-semana-3",
-    title: "Actividad 1 · Regresión Lineal Predictiva",
-    category: "Machine Learning",
-    shortDescription:
-      "Modelo supervisado de regresión lineal para estimación de tendencias numéricas, cálculo de error cuadrático medio (MSE) y visualización de ajuste.",
-    accentColor: "cyan",
-    evidence: {
-      week: "Semana 3",
-      objective:
-        "Comprender e implementar matemáticamente y con Python el ajuste de una recta de regresión lineal para predecir valores continuos y evaluar su precisión.",
-      problem:
-        "Se disponía de un conjunto de observaciones históricas con dispersión lineal donde era necesario estimar valores futuros minimizando el error residual.",
-      solutionExplanation:
-        "Se realizó el preprocesamiento de variables independientes y dependientes, división en conjuntos de entrenamiento y prueba (80/20), ajuste por mínimos cuadrados ordinarios y evaluación mediante R² y MSE.",
-      results: [
-        "Coeficiente de determinación R² de 0.942 en el conjunto de validación.",
-        "Error Cuadrático Medio (MSE) reducido a 12.48 unidades.",
-        "Visualización clara de la recta de tendencia frente a los datos reales.",
-      ],
-      technologies: ["Python", "NumPy", "Pandas", "Scikit-Learn", "Matplotlib"],
-      fileName: "regresion_lineal.py",
-      repoUrl: "https://github.com/usuario-simulado/actividad-1-regresion-lineal",
-      codeLanguage: "python",
-      codeSnippet: `import numpy as np
+    category: { es: "Machine Learning", en: "Machine Learning" },
+    title: {
+      es: "Actividad 1 · Regresión Lineal Predictiva",
+      en: "Activity 1 · Predictive Linear Regression",
+    },
+    shortDescription: {
+      es: "Modelo supervisado para estimación de tendencias numéricas, cálculo de error cuadrático medio (MSE) y ajuste por mínimos cuadrados.",
+      en: "Supervised model for numerical trend estimation, Mean Squared Error (MSE) calculation, and ordinary least squares fitting.",
+    },
+    technologies: ["Python", "NumPy", "Pandas", "Scikit-Learn", "Matplotlib"],
+    fileName: "regresion_lineal.py",
+    repoUrl: "https://github.com/Arven-503/Regresion-Lineal",
+    codeLanguage: "python",
+    imageSources: ["/evidencias/regresion/grafica-regresion.svg"],
+    codeSnippet: `import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
@@ -124,44 +183,57 @@ modelo = LinearRegression()
 modelo.fit(X_train, y_train)
 predicciones = modelo.predict(X_test)
 
-print(f"Pendiente (w): {modelo.coef_[0]:.4f}")
-print(f"Intercepto (b): {modelo.intercept_:.4f}")
 print(f"MSE: {mean_squared_error(y_test, predicciones):.4f}")
 print(f"R2 Score: {r2_score(y_test, predicciones):.4f}")`,
-      images: [
-        {
-          src: "/evidencias/regresion/grafica-regresion.svg",
-          caption: "Ajuste lineal por mínimos cuadrados y banda de dispersión residual.",
-        },
+    es: {
+      week: "Semana 3",
+      objective:
+        "Implementar en Python un modelo de regresión lineal para predecir valores continuos y evaluar su precisión estadística.",
+      problem:
+        "Estimar tendencias futuras a partir de observaciones históricas minimizando el error residual entre predicción y valor real.",
+      solutionExplanation:
+        "Se dividieron los datos en entrenamiento y prueba (80/20), ajustando la recta óptima mediante Scikit-Learn y evaluando con R² y MSE.",
+      results: [
+        "Coeficiente de determinación R² = 0.942 en validación.",
+        "Error Cuadrático Medio (MSE) reducido a 12.48 unidades.",
+        "Gráfica de ajuste lineal con bandas de dispersión.",
       ],
+      imageCaptions: ["Ajuste lineal por mínimos cuadrados y dispersión residual."],
+    },
+    en: {
+      week: "Week 3",
+      objective:
+        "Implement a linear regression model in Python to predict continuous values and evaluate statistical accuracy.",
+      problem:
+        "Estimate future trends from historical observations while minimizing residual error between predicted and actual values.",
+      solutionExplanation:
+        "Split dataset into training and testing sets (80/20), fitted the optimal line with Scikit-Learn, and evaluated using R² and MSE.",
+      results: [
+        "Coefficient of determination R² = 0.942 on validation set.",
+        "Mean Squared Error (MSE) reduced to 12.48 units.",
+        "Linear fit visualization with residual dispersion bands.",
+      ],
+      imageCaptions: ["Ordinary least squares linear fit and residual dispersion."],
     },
   },
   {
     id: "proj-laberinto",
     slug: "laberinto-arboles-decision-semana-4",
-    title: "Actividad 2 · Navegación en Laberinto (Árboles de Decisión)",
-    category: "Algoritmos e IA",
-    shortDescription:
-      "Resolución algorítmica de laberintos mediante exploración estructurada en árbol de decisiones, control de estados visitados y reconstrucción de ruta óptima.",
-    accentColor: "emerald",
-    evidence: {
-      week: "Semana 4",
-      objective:
-        "Modelar un entorno discreto en forma de matriz como un árbol de decisiones para encontrar una trayectoria válida desde el nodo inicial hasta la meta.",
-      problem:
-        "Dado un laberinto bidimensional con muros, bifurcaciones y callejones sin salida, el agente debía evitar ciclos infinitos y hallar la ruta de salida.",
-      solutionExplanation:
-        "Cada celda transitada se representó como un nodo con hasta 4 ramificaciones (Arriba, Abajo, Izquierda, Derecha). Se implementó una estructura de árbol de decisión con registro de nodos visitados y retroceso (backtracking) para podar ramas bloqueadas.",
-      results: [
-        "Resolución exitosa del laberinto de 10x10 sin caer en bucles.",
-        "Reducción del 45 % de nodos explorados gracias a la poda de estados visitados.",
-        "Trazado paso a paso de la ruta solución desde el origen hasta el objetivo.",
-      ],
-      technologies: ["Python", "Estructuras de Datos", "Árboles de Decisión", "Algoritmos de Búsqueda"],
-      fileName: "laberinto_arbol.py",
-      repoUrl: "https://github.com/usuario-simulado/actividad-2-laberinto-arbol",
-      codeLanguage: "python",
-      codeSnippet: `from collections import deque
+    category: { es: "Algoritmos e IA", en: "Algorithms & AI" },
+    title: {
+      es: "Actividad 2 · Laberinto con Árboles de Decisión",
+      en: "Activity 2 · Maze Navigation with Decision Trees",
+    },
+    shortDescription: {
+      es: "Exploración estructurada en árbol de decisiones sobre matrices bidimensionales con poda de nodos visitados y reconstrucción de ruta.",
+      en: "Structured decision-tree exploration over 2D grids with visited-state pruning and optimal path reconstruction.",
+    },
+    technologies: ["Python", "Árboles de Decisión", "Estructuras de Datos", "Búsqueda"],
+    fileName: "laberinto_arbol.py",
+    repoUrl: "https://github.com/Arven-503/Laberinto-Procedural",
+    codeLanguage: "python",
+    imageSources: ["/evidencias/laberinto/solucion-laberinto.svg"],
+    codeSnippet: `from collections import deque
 
 def resolver_laberinto(laberinto, inicio, meta):
     filas, columnas = len(laberinto), len(laberinto[0])
@@ -186,234 +258,259 @@ def resolver_laberinto(laberinto, inicio, meta):
                 cola.append(((nf, nc), camino + [(nf, nc)]))
 
     return []`,
-      images: [
-        {
-          src: "/evidencias/laberinto/solucion-laberinto.svg",
-          caption: "Recorrido óptimo reconstruido desde el nodo origen hasta la salida.",
-        },
+    es: {
+      week: "Semana 4",
+      objective:
+        "Modelar un laberinto como árbol de decisiones para hallar una trayectoria válida desde el origen hasta la salida sin ciclos.",
+      problem:
+        "Evitar bucles infinitos y callejones sin salida dentro de un entorno discreto con obstáculos.",
+      solutionExplanation:
+        "Cada celda se modeló como nodo ramificado en 4 direcciones posibles con registro de estados visitados y poda de ramas redundantes.",
+      results: [
+        "Resolución completa de matriz 10x10 sin ciclos.",
+        "Reducción del 45 % en nodos explorados mediante poda.",
+        "Reconstrucción exacta del camino solución.",
       ],
+      imageCaptions: ["Trayectoria óptima trazada desde el nodo inicial hasta la meta."],
+    },
+    en: {
+      week: "Week 4",
+      objective:
+        "Model a maze as a decision tree to find a valid path from start to goal without infinite loops.",
+      problem:
+        "Avoid infinite cycles and dead ends inside a discrete grid environment with walls.",
+      solutionExplanation:
+        "Each cell was modeled as a branching node across 4 directions with visited-state tracking and redundant branch pruning.",
+      results: [
+        "Full 10x10 grid maze solved with zero loops.",
+        "45% reduction in explored nodes via state pruning.",
+        "Exact step-by-step path reconstruction.",
+      ],
+      imageCaptions: ["Optimal path traced from start node to target exit."],
     },
   },
   {
     id: "proj-ai-challenge",
     slug: "ai-challenge-kmeans-knn",
-    title: "Actividad 3 · AI Challenge: K-Means y KNN",
-    category: "Machine Learning",
-    shortDescription:
-      "Combinación de aprendizaje no supervisado (K-Means) para descubrir segmentos latentes y aprendizaje supervisado (KNN) para clasificar nuevos registros.",
-    accentColor: "rose",
-    evidence: {
+    category: { es: "Machine Learning", en: "Machine Learning" },
+    title: {
+      es: "Actividad 3 · AI Challenge: K-Means y KNN",
+      en: "Activity 3 · AI Challenge: K-Means & KNN",
+    },
+    shortDescription: {
+      es: "Segmentación no supervisada con K-Means (K=3 y K=4) y clasificación supervisada KNN evaluando el impacto de StandardScaler sobre 500 registros académicos.",
+      en: "Unsupervised K-Means clustering (K=3 and K=4) paired with supervised KNN classification comparing StandardScaler impact across 500 student records.",
+    },
+    technologies: ["Python", "NumPy", "Pandas", "Scikit-Learn", "Matplotlib", "Google Colab"],
+    fileName: "KNN_y_K_Means.ipynb",
+    repoUrl: "https://github.com/Arven-503/KNN-y-K-Means",
+    codeLanguage: "python",
+    imageSources: ["/evidencias/ai-challenge/clusters-knn.svg"],
+    codeSnippet: `import numpy as np
+import pandas as pd
+from sklearn.cluster import KMeans
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
+
+np.random.seed(42)
+n = 500
+horas = np.random.randint(1, 11, n)
+asistencia = np.random.randint(40, 101, n)
+tareas = np.random.randint(30, 101, n)
+nota = np.clip((horas * 5) + (asistencia * 0.35) + (tareas * 0.25) + np.random.normal(0, 5, n), 0, 100)
+aprobado = np.where(nota >= 60, 1, 0)
+
+df = pd.DataFrame({"Horas": horas, "Asistencia": asistencia, "Tareas": tareas, "Nota": nota, "Aprobado": aprobado})
+scaler = StandardScaler()
+X_norm = scaler.fit_transform(df[["Horas", "Asistencia", "Tareas"]])
+
+df["Grupo3"] = KMeans(n_clusters=3, random_state=42, n_init=10).fit_predict(X_norm)
+df["Grupo4"] = KMeans(n_clusters=4, random_state=42, n_init=10).fit_predict(X_norm)
+
+X_train_norm, X_test_norm, y_train, y_test = train_test_split(X_norm, df["Aprobado"], test_size=0.25, random_state=42)
+valores_k = [1, 3, 5, 7, 11, 15, 21]
+resultados_norm = [
+    accuracy_score(y_test, KNeighborsClassifier(n_neighbors=k).fit(X_train_norm, y_train).predict(X_test_norm))
+    for k in valores_k
+]
+mejor_k = valores_k[np.argmax(resultados_norm)]
+print("Mejor k:", mejor_k, "Exactitud:", max(resultados_norm))`,
+    es: {
       week: "Semana 6–7",
       objective:
-        "Aplicar algoritmos basados en distancias para agrupar datos sin etiquetar mediante K-Means y predecir categorías de nuevos puntos mediante K-Nearest Neighbors.",
+        "Aplicar clustering K-Means (3 y 4 grupos) y clasificación KNN sobre 500 registros académicos, comparando exactitud con y sin normalización.",
       problem:
-        "Se requería segmentar un dataset multidimensional sin etiquetas previas para descubrir patrones naturales y posteriormente clasificar nuevas muestras entrantes con alta precisión.",
+        "Identificar perfiles de rendimiento estudiantil sin etiquetas y predecir aprobación evaluando cómo afectan las distintas escalas numéricas (Horas, Asistencia, Tareas) a KNN.",
       solutionExplanation:
-        "Primero se estandarizaron las características con StandardScaler. Se ejecutó K-Means evaluando el método del codo (K=3) para asignar etiquetas de clúster y luego se entrenó un clasificador KNN (K=5) con distancia euclidiana.",
+        "Se normalizaron las variables con StandardScaler, se analizaron clústeres K=3 y K=4 y se evaluaron 7 valores de k ([1, 3, 5, 7, 11, 15, 21]) antes de predecir un caso nuevo con predict_proba.",
       results: [
-        "Identificación de 3 clústeres bien diferenciados con baja inercia intra-grupo.",
-        "Exactitud (Accuracy) del 93.5 % en clasificación con KNN (K=5).",
-        "Visualización bidimensional de centroides y fronteras de vecindad.",
+        "Comparación completa de K-Means con 3 y 4 clústeres sobre 500 estudiantes.",
+        "Demostración experimental de mayor exactitud en KNN al aplicar StandardScaler.",
+        "Selección automática del mejor hiperparámetro k y cálculo de probabilidad de aprobación.",
       ],
-      technologies: ["Python", "Scikit-Learn", "K-Means", "KNN", "Pandas", "Matplotlib"],
-      fileName: "ai_challenge_kmeans_knn.py",
-      repoUrl: "https://github.com/usuario-simulado/actividad-3-ai-challenge",
-      codeLanguage: "python",
-      codeSnippet: `from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import KMeans
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-import numpy as np
-
-datos = np.random.rand(150, 2) * 100
-scaler = StandardScaler()
-datos_norm = scaler.fit_transform(datos)
-
-kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
-etiquetas_cluster = kmeans.fit_predict(datos_norm)
-
-X_train, X_test, y_train, y_test = train_test_split(
-    datos_norm, etiquetas_cluster, test_size=0.25, random_state=42
-)
-
-knn = KNeighborsClassifier(n_neighbors=5, metric="euclidean")
-knn.fit(X_train, y_train)
-exactitud = accuracy_score(y_test, knn.predict(X_test))
-print(f"Exactitud KNN: {exactitud * 100:.2f}%")`,
-      images: [
-        {
-          src: "/evidencias/ai-challenge/clusters-knn.svg",
-          caption: "Distribución de los 3 centroides K-Means y vecindarios de clasificación KNN.",
-        },
+      imageCaptions: ["Clústeres K-Means (K=3 / K=4) y curva comparativa de exactitud KNN."],
+    },
+    en: {
+      week: "Week 6–7",
+      objective:
+        "Apply K-Means clustering (3 and 4 clusters) and KNN classification on 500 student records, comparing accuracy with and without feature scaling.",
+      problem:
+        "Uncover unlabeled academic performance segments and predict pass/fail status while measuring how differing feature scales affect Euclidean distance in KNN.",
+      solutionExplanation:
+        "Standardized features with StandardScaler, analyzed K=3 and K=4 clusters, benchmarked 7 values of k ([1, 3, 5, 7, 11, 15, 21]), and predicted a new student case with predict_proba.",
+      results: [
+        "Full K-Means segmentation comparison for K=3 and K=4 across 500 records.",
+        "Experimental validation showing improved KNN accuracy with StandardScaler.",
+        "Automated optimal k selection and class probability estimation.",
       ],
+      imageCaptions: ["K-Means clusters (K=3 / K=4) and KNN accuracy comparison curve."],
     },
   },
   {
     id: "proj-hotspots",
     slug: "hotspots-comerciales",
-    title: "Actividad 4 · Detección de Hotspots Comerciales",
-    category: "Ciencia de Datos",
-    shortDescription:
-      "Análisis espacial y agrupamiento por densidad para detectar zonas de alta actividad comercial y oportunidades de expansión.",
-    accentColor: "amber",
-    evidence: {
+    category: { es: "Ciencia de Datos & Geo-ML", en: "Data Science & Geo-ML" },
+    title: {
+      es: "Actividad 4 · Detección de Hotspots Comerciales (San Salvador)",
+      en: "Activity 4 · Commercial Hotspots Detection (San Salvador)",
+    },
+    shortDescription: {
+      es: "Aplicación interactiva en Streamlit y Folium que evalúa hotspots comerciales en San Salvador usando K-Means, Coeficiente de Silueta y KNN con distancia Haversine.",
+      en: "Interactive Streamlit & Folium app analyzing commercial hotspots in San Salvador using K-Means, Silhouette Score, and Haversine-distance KNN.",
+    },
+    technologies: ["Python", "Streamlit", "Folium", "Scikit-Learn", "Pandas", "NumPy"],
+    fileName: "app.py (Streamlit + Folium)",
+    repoUrl: "https://github.com/Arven-503/KNN-y-K-Means---Deteccion-de-hotspots-comerciales",
+    codeLanguage: "python",
+    imageSources: ["/evidencias/hotspots/mapa-hotspots.svg"],
+    codeSnippet: `import streamlit as st
+import pandas as pd
+import numpy as np
+import folium
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import LeaveOneOut
+
+df = pd.read_csv("wendys_san_salvador_limpio.csv")
+X = df[["latitud", "longitud"]].to_numpy()
+
+kmeans = KMeans(n_clusters=k_clusters, random_state=42, n_init=10)
+df["cluster"] = kmeans.fit_predict(X)
+silueta = float(silhouette_score(X, df["cluster"]))
+
+conteo_clusters = df["cluster"].value_counts()
+promedio_locales = conteo_clusters.mean()
+df["categoria_densidad"] = np.where(
+    df["cluster"].map(conteo_clusters) > promedio_locales,
+    "Alta Concentracion",
+    "Baja Concentracion"
+)
+
+X_rad = np.radians(X)
+y = np.array(df["categoria_densidad"].tolist())
+
+knn_modelo = KNeighborsClassifier(n_neighbors=k_vecinos, metric="haversine")
+knn_modelo.fit(X_rad, y)
+
+punto_nuevo_rad = np.radians([[lat_nueva, lon_nueva]])
+prediccion_nueva = knn_modelo.predict(punto_nuevo_rad)[0]
+distancias_rad, indices_vecinos = knn_modelo.kneighbors(punto_nuevo_rad)
+distancias_km = distancias_rad[0] * 6371.0`,
+    es: {
       week: "Semana 8",
       objective:
-        "Identificar polos de concentración comercial a partir de registros geolocalizados para apoyar decisiones de apertura o inversión.",
+        "Desarrollar un simulador geoespacial interactivo en Streamlit y Folium para evaluar concentración comercial y ubicaciones potenciales de apertura en San Salvador.",
       problem:
-        "La dispersión de puntos de venta y flujo de clientes dificultaba distinguir visualmente qué sectores concentraban mayor actividad comercial real.",
+        "Determinar si una nueva coordenada propuesta en San Salvador cae en una zona de Alta o Baja Concentración comercial y medir su riesgo de canibalización frente a sucursales existentes.",
       solutionExplanation:
-        "Se depuraron registros geográficos (latitud, longitud e intensidad de transacciones), aplicando agrupamiento espacial y estimación de densidad para aislar los principales hotspots urbanos.",
+        "Se agruparon las sucursales con K-Means (midiendo calidad con Coeficiente de Silueta), se clasificaron zonas por densidad frente al promedio y se entrenó un modelo KNN con métrica Haversine validado mediante Leave-One-Out (LOO).",
       results: [
-        "Detección de 3 zonas núcleo que concentran el 68 % de la actividad comercial analizada.",
-        "Eliminación de ruido geográfico y registros atípicos fuera del área metropolitana.",
-        "Generación de mapa de intensidad para presentación ejecutiva.",
+        "Mapa interactivo con Folium mostrando centroides K-Means, radios de 1.1 km y líneas Haversine a los k vecinos más cercanos.",
+        "Validación cruzada Leave-One-Out (LOO) y cálculo exacto de distancias reales en kilómetros.",
+        "Diagnóstico estratégico automático de oportunidad de expansión vs. riesgo de canibalización.",
       ],
-      technologies: ["Python", "Pandas", "Geo-Analítica", "Clustering Espacial", "Visualización"],
-      fileName: "hotspots_comerciales.py",
-      repoUrl: "https://github.com/usuario-simulado/actividad-4-hotspots-comerciales",
-      codeLanguage: "python",
-      codeSnippet: `import pandas as pd
-from sklearn.cluster import DBSCAN
-import numpy as np
-
-df = pd.DataFrame({
-    "latitud": [13.6929, 13.6941, 13.7012, 13.7025, 13.6780, 13.6792],
-    "longitud": [-89.2182, -89.2175, -89.2240, -89.2231, -89.2390, -89.2385],
-    "volumen": [120, 145, 210, 195, 88, 92]
-})
-
-coordenadas = np.radians(df[["latitud", "longitud"]])
-modelo_espacial = DBSCAN(eps=0.001, min_samples=2, metric="haversine")
-df["hotspot_id"] = modelo_espacial.fit_predict(coordenadas)
-
-resumen = df.groupby("hotspot_id")["volumen"].sum()
-print(resumen)`,
-      images: [
-        {
-          src: "/evidencias/hotspots/mapa-hotspots.svg",
-          caption: "Núcleos de densidad comercial detectados mediante agrupamiento espacial.",
-        },
-      ],
+      imageCaptions: ["Simulador geoespacial en Streamlit + Folium con centroides K-Means y vecinos KNN Haversine."],
     },
-  },
-  {
-    id: "proj-fullstack",
-    slug: "arquitectura-fullstack-nextjs",
-    title: "Actividad 5 · Desarrollo Full-Stack y API REST (Este Portafolio)",
-    category: "Full-Stack Web",
-    shortDescription:
-      "Arquitectura completa de aplicación web con Next.js App Router, React, TypeScript, Tailwind CSS y endpoint REST POST /api/contact validado.",
-    accentColor: "indigo",
-    evidence: {
-      week: "Semana 9–10",
+    en: {
+      week: "Week 8",
       objective:
-        "Diseñar, desarrollar y desplegar en Vercel una aplicación web Full-Stack original que integre frontend reactivo, tipado estricto y una API REST funcional.",
+        "Build an interactive geospatial simulator in Streamlit and Folium to evaluate commercial density and potential store locations in San Salvador.",
       problem:
-        "Se necesitaba construir una plataforma propia y escalable que unificara todas las evidencias del período junto con un canal de contacto validado en servidor.",
+        "Determine whether a proposed coordinate in San Salvador falls within a High or Low Concentration zone and assess cannibalization risk against existing locations.",
       solutionExplanation:
-        "Se estructuró el proyecto bajo Next.js App Router separando datos tipados (src/data), componentes modulares (src/components) y rutas de servidor (src/app/api/contact/route.ts) con validación de payload y variables de entorno protegidas.",
+        "Clustered store coordinates using K-Means (evaluated via Silhouette Score), labeled density zones against cluster averages, and trained a Haversine-metric KNN classifier validated with Leave-One-Out (LOO).",
       results: [
-        "Interfaz responsive con estética litográfica y acuarela oscura optimizada.",
-        "Endpoint REST POST /api/contact con validación de campos y respuestas JSON estructuradas.",
-        "Despliegue continuo en Vercel conectado al repositorio independiente en GitHub.",
+        "Interactive Folium map rendering K-Means centroids, 1.1 km radii, and Haversine dashed lines to k-nearest neighbors.",
+        "Leave-One-Out (LOO) cross-validation and exact real-world distance calculations in kilometers.",
+        "Automated strategic diagnosis comparing geographic expansion opportunity vs. cannibalization risk.",
       ],
-      technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "API REST", "Vercel"],
-      fileName: "src/app/api/contact/route.ts",
-      repoUrl: "https://github.com/usuario-simulado/mi-portafolio-digital",
-      codeLanguage: "typescript",
-      codeSnippet: `import { NextResponse } from "next/server";
-
-export async function POST(request: Request) {
-  const body = await request.json();
-  const nombre = String(body.name ?? "").trim();
-  const correo = String(body.email ?? "").trim();
-  const mensaje = String(body.message ?? "").trim();
-
-  if (nombre.length < 2 || !correo.includes("@") || mensaje.length < 10) {
-    return NextResponse.json(
-      { ok: false, error: "Datos incompletos o formato inválido." },
-      { status: 400 }
-    );
-  }
-
-  return NextResponse.json(
-    { ok: true, message: "Mensaje recibido correctamente por la API." },
-    { status: 200 }
-  );
-}`,
-      images: [
-        {
-          src: "/evidencias/arquitectura/diagrama-fullstack.svg",
-          caption: "Flujo entre componentes React, endpoint POST /api/contact y despliegue en Vercel.",
-        },
-      ],
-      architectureDetails: {
-        projectStructure: [
-          "src/app/page.tsx – Página principal integrando las 7 secciones obligatorias",
-          "src/app/api/contact/route.ts – Controlador backend REST para mensajería",
-          "src/components/ – Componentes modulares de UI, visor de evidencias y formulario",
-          "src/data/portfolioData.ts – Capa de datos tipados y evidencias de las 10 semanas",
-          "src/types/portfolio.ts – Contratos e interfaces TypeScript",
-          "public/evidencias/ – Recursos gráficos y láminas técnicas de proyectos",
-        ],
-        frontendComponents: [
-          "Navbar.tsx – Navegación fluida responsive con indicador de sección",
-          "HeroSection.tsx – Presentación principal con identidad litográfica y enlaces",
-          "AboutExperienceSection.tsx – Perfil personal, intereses, fortalezas y trayectoria",
-          "ProjectsShowcase.tsx – Galería interactiva con modal/drawer de código y evidencias",
-          "SkillsEducationSection.tsx – Matriz categorizada de habilidades y formación académica",
-          "ContactSection.tsx – Formulario controlado conectado a POST /api/contact",
-        ],
-        backendEndpoints: [
-          "POST /api/contact – Recibe JSON { name, email, message }, valida reglas de negocio y retorna estado HTTP 200 o 400.",
-        ],
-        validations: [
-          "Validación en tiempo real en cliente (longitud mínima, formato de correo electrónico y campos requeridos).",
-          "Doble validación estricta en el servidor (route.ts) para prevenir peticiones malformadas.",
-          "Protección de variables de entorno sensibles mediante .env.local excluido en .gitignore.",
-        ],
-      },
+      imageCaptions: ["Streamlit + Folium geospatial simulator with K-Means centroids and Haversine KNN neighbors."],
     },
-  },
+  }
 ];
 
 export const skillsData: SkillCategory[] = [
   {
-    category: "Lenguajes de programación",
-    skills: ["Python", "TypeScript", "JavaScript (ES6+)", "SQL", "HTML5 / CSS3"],
-  },
-  {
-    category: "Desarrollo web",
-    skills: ["React", "Next.js (App Router)", "Tailwind CSS", "API REST", "Diseño Responsive"],
-  },
-  {
-    category: "Bases de datos",
-    skills: ["PostgreSQL", "MySQL", "SQLite", "Modelado Relacional"],
-  },
-  {
-    category: "Herramientas tecnológicas",
-    skills: ["Git & GitHub", "Docker / WSL2", "Vercel", "VS Code", "Jupyter Notebooks"],
-  },
-  {
-    category: "Inteligencia artificial y Machine Learning",
+    category: { es: "Flujo de Desarrollo con IA", en: "AI-Assisted Development" },
     skills: [
-      "Regresión Lineal",
-      "Árboles de Decisión",
-      "K-Means Clustering",
-      "K-Nearest Neighbors (KNN)",
-      "Scikit-Learn, NumPy & Pandas",
+      "Prompt Engineering",
+      "Prototipado Rápido",
+      "Lectura y Depuración de Código",
+      "Lógica de Programación",
+      "Integración de APIs",
     ],
   },
   {
-    category: "Habilidades personales",
+    category: { es: "Ecosistema Web & Despliegue", en: "Web Ecosystem & Deployment" },
     skills: [
-      "Pensamiento Analítico",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Vercel (CI/CD)",
+      "Diseño Responsivo",
+    ],
+  },
+  {
+    category: { es: "Análisis & Ciencia de Datos", en: "Data Analysis & Science" },
+    skills: [
+      "Microsoft Excel (Expert)",
+      "Pandas",
+      "Limpieza de Datos",
+      "Visualización (Matplotlib / Folium)",
+      "Modelado de Datos",
+    ],
+  },
+  {
+    category: { es: "Entorno y Herramientas", en: "Environment & Tools" },
+    skills: [
+      "Git & GitHub",
+      "Google Colab",
+      "VS Code",
+      "Streamlit",
+      "Terminal / PowerShell",
+    ],
+  },
+  {
+    category: { es: "Conceptos de IA & ML", en: "AI & ML Concepts" },
+    skills: [
+      "Regresión Lineal",
+      "K-Means (Clustering)",
+      "KNN (Clasificación)",
+      "Algoritmos DFS / BFS",
+      "Evaluación de Modelos (R², Silueta)",
+    ],
+  },
+  {
+    category: { es: "Competencias y Certificaciones", en: "Competencies & Certifications" },
+    skills: [
+      "Inglés Avanzado (TOEIC)",
+      "Pensamiento Lógico",
       "Resolución de Problemas",
-      "Comunicación Técnica",
-      "Trabajo Colaborativo",
-      "Aprendizaje Continuo",
+      "Aprendizaje Autónomo",
+      "Trabajo en Equipo",
     ],
   },
 ];
@@ -421,35 +518,71 @@ export const skillsData: SkillCategory[] = [
 export const educationData: EducationItem[] = [
   {
     id: "edu-1",
-    institution: "Programa Académico IA Supérate",
-    degree: "Especialización en Inteligencia Artificial, Machine Learning y Desarrollo Web",
-    period: "2026 (10 Semanas)",
-    status: "Completado",
-    highlights: [
-      "Desarrollo de modelos supervisados y no supervisados en Python.",
-      "Construcción y despliegue en producción de aplicaciones Full-Stack con Next.js y Vercel.",
-    ],
+    es: {
+      institution: "Centro ¡Supérate! Fundación Frech",
+      degree: "Diplomado en Inglés, Informática y Valores",
+      period: "2024 – 2026",
+      status: "Destacado",
+      highlights: [
+        "Desarrollo de competencias prácticas en Informática y resolución lógica de problemas.",
+        "Fortalecimiento comunicativo en el idioma Inglés y formación ética basada en Valores.",
+      ],
+    },
+    en: {
+      institution: "¡Supérate! Fundación Frech Center",
+      degree: "Diploma in English, Computer Science & Values",
+      period: "2024 – 2026",
+      status: "Honors",
+      highlights: [
+        "Development of practical competencies in Computer Science and logical problem-solving.",
+        "Communicative fluency in English and ethical leadership grounded in Values.",
+      ],
+    },
   },
   {
     id: "edu-2",
-    institution: "Institución Educativa Superior (Simulada)",
-    degree: "Ingeniería en Ciencias de la Computación / Desarrollo de Software",
-    period: "2024 – Actualidad",
-    status: "En curso",
-    highlights: [
-      "Fundamentos de algoritmos, estructuras de datos y matemáticas aplicadas.",
-      "Participación en laboratorios prácticos de desarrollo de software.",
-    ],
+    es: {
+      institution: "Educación Media · San Salvador",
+      degree: "Bachillerato & Reconocimiento Excelencia AVANZO 2025",
+      period: "2024 – 2025",
+      status: "Completado",
+      highlights: [
+        "Primer lugar en calificación de prueba AVANZO en el departamento de San Salvador (2025).",
+        "Formación sólida en matemáticas, lógica computacional e inglés.",
+      ],
+    },
+    en: {
+      institution: "High School · San Salvador",
+      degree: "High School Diploma & AVANZO 2025 Top Score Recognition",
+      period: "2024 – 2025",
+      status: "Completed",
+      highlights: [
+        "Highest AVANZO exam score in San Salvador Department (2025).",
+        "Strong foundation in mathematics, computational logic, and English.",
+      ],
+    },
   },
   {
     id: "edu-3",
-    institution: "Formación Complementaria & Certificaciones",
-    degree: "Control de Versiones con Git, TypeScript Moderno y Ciencia de Datos",
-    period: "2025 – 2026",
-    status: "Certificado",
-    highlights: [
-      "Buenas prácticas de repositorios, flujos de ramas y documentación técnica.",
-      "Análisis exploratorio de datos y visualización científica.",
-    ],
+    es: {
+      institution: "Certificaciones Internacionales",
+      degree: "TOEIC S&W / L&R & Microsoft Office Expert (Excel)",
+      period: "2025 – 2026",
+      status: "Certificado",
+      highlights: [
+        "TOEIC Speaking & Writing (S&W) y TOEIC Listening & Reading (L&R).",
+        "Microsoft Excel Expert y Microsoft Excel Specialist.",
+      ],
+    },
+    en: {
+      institution: "International Certifications",
+      degree: "TOEIC S&W / L&R & Microsoft Office Expert (Excel)",
+      period: "2025 – 2026",
+      status: "Certified",
+      highlights: [
+        "TOEIC Speaking & Writing (S&W) and TOEIC Listening & Reading (L&R).",
+        "Microsoft Excel Expert and Microsoft Excel Specialist.",
+      ],
+    },
   },
 ];

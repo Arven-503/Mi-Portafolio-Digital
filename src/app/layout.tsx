@@ -1,16 +1,16 @@
 ﻿import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  variable: "--font-serif",
+  variable: "--font-display",
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
 });
 
@@ -21,9 +21,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portafolio Digital | Inteligencia Artificial y Desarrollo Full-Stack",
+  title: "SILICON / HUMAN · Portafolio Digital",
   description:
-    "Portafolio profesional de proyectos en Inteligencia Artificial, Machine Learning, Algoritmos y Desarrollo Web con Next.js.",
+    "Portafolio profesional minimalista inspirado en arquitectura de silicio, inteligencia artificial y desarrollo Full-Stack.",
 };
 
 export default function RootLayout({
@@ -34,9 +34,9 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${cormorant.variable} ${jakarta.variable} ${jetbrains.variable}`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrains.variable}`}
     >
-      <body className="font-sans antialiased litho-grid min-h-screen selection:bg-sky-400/30 selection:text-sky-100">
+      <body className="font-sans antialiased bg-black text-[#F4F5F7] min-h-screen selection:bg-[#0000DD] selection:text-white">
         {children}
       </body>
     </html>

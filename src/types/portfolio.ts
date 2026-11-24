@@ -1,16 +1,15 @@
-﻿export interface SocialLinks {
+﻿export type Language = "es" | "en";
+
+export interface SocialLinks {
   github: string;
   linkedin: string;
   email: string;
 }
 
-export interface ProfileData {
-  fullName: string;
+export interface ProfileContent {
   role: string;
   tagline: string;
-  avatarUrl: string;
   location: string;
-  socials: SocialLinks;
   about: {
     whoAmI: string;
     studies: string;
@@ -20,31 +19,35 @@ export interface ProfileData {
   };
 }
 
-export interface ExperienceItem {
-  id: string;
+export interface ProfileData {
+  fullName: string;
+  socials: SocialLinks;
+  es: ProfileContent;
+  en: ProfileContent;
+}
+
+export interface ExperienceLocalized {
   role: string;
   organization: string;
   period: string;
-  type: "Académica" | "Proyecto Colaborativo" | "Pasantía" | "Voluntariado";
+  type: string;
   description: string;
   achievements: string[];
 }
 
-export interface ProjectEvidence {
+export interface ExperienceItem {
+  id: string;
+  es: ExperienceLocalized;
+  en: ExperienceLocalized;
+}
+
+export interface ProjectEvidenceLocalized {
   week: string;
   objective: string;
   problem: string;
   solutionExplanation: string;
   results: string[];
-  technologies: string[];
-  codeSnippet: string;
-  codeLanguage: string;
-  fileName: string;
-  repoUrl: string;
-  images: {
-    src: string;
-    caption: string;
-  }[];
+  imageCaptions: string[];
   architectureDetails?: {
     projectStructure: string[];
     frontendComponents: string[];
@@ -56,23 +59,34 @@ export interface ProjectEvidence {
 export interface ProjectItem {
   id: string;
   slug: string;
-  title: string;
-  category: "Machine Learning" | "Algoritmos e IA" | "Ciencia de Datos" | "Full-Stack Web";
-  shortDescription: string;
-  accentColor: "indigo" | "emerald" | "amber" | "rose" | "cyan";
-  evidence: ProjectEvidence;
+  category: { es: string; en: string };
+  title: { es: string; en: string };
+  shortDescription: { es: string; en: string };
+  technologies: string[];
+  codeSnippet: string;
+  codeLanguage: string;
+  fileName: string;
+  repoUrl: string;
+  imageSources: string[];
+  es: ProjectEvidenceLocalized;
+  en: ProjectEvidenceLocalized;
 }
 
 export interface SkillCategory {
-  category: string;
+  category: { es: string; en: string };
   skills: string[];
 }
 
-export interface EducationItem {
-  id: string;
+export interface EducationLocalized {
   institution: string;
   degree: string;
   period: string;
   status: string;
   highlights: string[];
+}
+
+export interface EducationItem {
+  id: string;
+  es: EducationLocalized;
+  en: EducationLocalized;
 }
