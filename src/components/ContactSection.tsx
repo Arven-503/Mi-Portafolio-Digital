@@ -65,10 +65,19 @@ export default function ContactSection({ lang }: ContactSectionProps) {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "2bc511c6-bfb7-4807-ba7a-4abd50ae539f",
+          subject: "Nuevo mensaje desde tu Portafolio Web",
+          from_name: "Portafolio Daniel Amaya",
+          ...formData,
+        }),
+      }),
       });
 
       const data: ApiResponse = await response.json();
@@ -261,3 +270,4 @@ export default function ContactSection({ lang }: ContactSectionProps) {
     </section>
   );
 }
+
