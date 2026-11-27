@@ -10,10 +10,9 @@ interface ContactSectionProps {
   lang: Language;
 }
 
-interface ApiResponse {
-  ok: boolean;
+interface Web3FormsResponse {
+  success: boolean;
   message?: string;
-  error?: string;
 }
 
 export default function ContactSection({ lang }: ContactSectionProps) {
@@ -73,20 +72,21 @@ export default function ContactSection({ lang }: ContactSectionProps) {
         },
         body: JSON.stringify({
           access_key: "2bc511c6-bfb7-4807-ba7a-4abd50ae539f",
-          subject: "Nuevo mensaje desde tu Portafolio Web",
+          subject: `Nuevo mensaje en Portafolio de ${name}`,
           from_name: "Portafolio Daniel Amaya",
-          ...formData,
+          name,
+          email,
+          message,
         }),
-      }),
       });
 
-      const data: ApiResponse = await response.json();
+      const data: Web3FormsResponse = await response.json();
 
-      if (!response.ok || !data.ok) {
+      if (!response.ok || !data.success) {
         setStatus({
           type: "error",
           text:
-            data.error ??
+            data.message ??
             (lang === "es" ? "Ocurrió un error al enviar." : "Error sending message."),
         });
       } else {
@@ -94,8 +94,8 @@ export default function ContactSection({ lang }: ContactSectionProps) {
           type: "success",
           text:
             lang === "es"
-              ? `Gracias ${name}, tu mensaje fue recibido por la API.`
-              : `Thank you ${name}, your message was received by the API.`,
+              ? `Gracias ${name}, tu mensaje fue enviado directamente a mi correo.`
+              : `Thank you ${name}, your message was sent directly to my email.`,
         });
         setName("");
         setEmail("");
@@ -106,8 +106,8 @@ export default function ContactSection({ lang }: ContactSectionProps) {
         type: "error",
         text:
           lang === "es"
-            ? "Error de conexión con el servidor API REST."
-            : "Connection error with the REST API server.",
+            ? "Error de conexión con el servidor de correo."
+            : "Connection error with the mail server.",
       });
     } finally {
       setLoading(false);
@@ -135,16 +135,23 @@ export default function ContactSection({ lang }: ContactSectionProps) {
 
               <p className="mt-4 max-w-md text-sm leading-relaxed text-[#777D86]">
                 {lang === "es"
-                  ? "Canal directo de comunicación profesional conectado al endpoint backend POST /api/contact."
-                  : "Direct professional communication channel connected to the POST /api/contact backend endpoint."}
+                  ? "Canal directo de comunicación profesional conectado al servicio de mensajería en tiempo real."
+                  : "Direct professional communication channel connected to real-time messaging service."}
               </p>
 
               <div className="mt-6 space-y-3 font-mono text-xs uppercase">
                 <a
-                  href={`mailto:daniel.amaya.dev.2007@gmail.com`}
+                  href="mailto:daniel.amaya.dev.2007@gmail.com"
                   className="block border border-[#17191D] bg-[#000000] p-3.5 text-[#C8CDD5] transition hover:border-[#0000DD]"
                 >
                   EMAIL // {profileData.socials.email}
+                </a>
+
+                <a
+                  href="tel:+50378081528"
+                  className="block border border-[#17191D] bg-[#000000] p-3.5 text-[#777D86] transition hover:border-[#0000DD] hover:text-[#C8CDD5]"
+                >
+                  TEL // +503 7808 1528
                 </a>
 
                 <a
@@ -168,7 +175,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
             </div>
 
             <div className="mt-8 border-t border-[#17191D] pt-4 font-mono text-[11px] text-[#777D86]">
-              API ENDPOINT // POST /api/contact
+              API ENDPOINT // WEB3FORMS REST
             </div>
           </div>
 
@@ -270,4 +277,3 @@ export default function ContactSection({ lang }: ContactSectionProps) {
     </section>
   );
 }
-
